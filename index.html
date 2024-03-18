@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Price Comparator</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div id="app">
+			<!-- Product input form -->
+			<!-- Product input form -->
+			<div class="form">
+				<h2>Product Price Comparator</h2>
+				<div id="products">
+					<!-- Default products -->
+					<div>
+						<input type="text" class="productName" placeholder="Product 1 Name" value="Product A" />
+						<input type="number" class="productPrice" placeholder="Product 1 Price" value="100" />
+						<input type="number" class="productWeight" placeholder="Product 1 Weight" value="1" />
+					</div>
+					<div>
+						<input type="text" class="productName" placeholder="Product 2 Name" value="Product B" />
+						<input type="number" class="productPrice" placeholder="Product 2 Price" value="150" />
+						<input type="number" class="productWeight" placeholder="Product 2 Weight" value="1" />
+					</div>
+				</div>
+				<button onclick="comparePrices()">Compare Prices</button>
+			</div>
+			<!-- Result display -->
+			<div id="result"></div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+				navigator.serviceWorker.register('/service-worker.js').then(
+					function (registration) {
+						console.log('ServiceWorker registration successful with scope: ', registration.scope);
+					},
+					function (err) {
+						console.log('ServiceWorker registration failed: ', err);
+					}
+				);
+			});
+		}
+	</script>
+</html>
