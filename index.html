@@ -9,8 +9,7 @@
 	<body>
 		<div id="app">
 			<!-- Product input form -->
-			<!-- Product input form -->
-			<div class="form">
+			<div class="form" id="form">
 				<h2>Product Price Comparator</h2>
 				<div id="products">
 					<!-- Default products -->
@@ -31,19 +30,19 @@
 			<div id="result"></div>
 		</div>
 		<script src="script.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function () {
+					navigator.serviceWorker.register('/service-worker.js').then(
+						function (registration) {
+							console.log('ServiceWorker registration successful with scope: ', registration.scope);
+						},
+						function (err) {
+							console.log('ServiceWorker registration failed: ', err);
+						}
+					);
+				});
+			}
+		</script>
 	</body>
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function () {
-				navigator.serviceWorker.register('/service-worker.js').then(
-					function (registration) {
-						console.log('ServiceWorker registration successful with scope: ', registration.scope);
-					},
-					function (err) {
-						console.log('ServiceWorker registration failed: ', err);
-					}
-				);
-			});
-		}
-	</script>
 </html>
