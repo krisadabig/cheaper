@@ -10,22 +10,35 @@
 	<body>
 		<div id="app">
 			<!-- Product input form -->
-			<div class="form" id="form">
-				<h2>Product Price Comparator</h2>
+			<div class="form">
+				<h1 class="title">Product Price Comparator</h1>
 				<div id="products">
-					<!-- Default products -->
-					<div>
-						<input type="text" class="productName" placeholder="Product 1 Name" value="Product A" />
-						<input type="number" class="productPrice" placeholder="Product 1 Price" value="100" />
-						<input type="number" class="productWeight" placeholder="Product 1 Weight" value="1" />
+					<!-- Product A -->
+					<div class="product">
+						<h2>Product A</h2>
+						<div class="input-container">
+							<label for="APrice" class="input-label">Price</label>
+							<input id="APrice" type="number" class="productPrice" placeholder="Product A Price" value="100" />
+						</div>
+						<div class="input-container">
+							<label for="Aweight" class="input-label">Weight</label>
+							<input id="Aweight" type="number" class="productWeight" placeholder="Product A Weight" value="1" />
+						</div>
 					</div>
-					<div>
-						<input type="text" class="productName" placeholder="Product 2 Name" value="Product B" />
-						<input type="number" class="productPrice" placeholder="Product 2 Price" value="150" />
-						<input type="number" class="productWeight" placeholder="Product 2 Weight" value="1" />
+					<!-- Product B -->
+					<div class="product">
+						<h2>Product B</h2>
+						<div class="input-container">
+							<label for="BPrice" class="input-label">Price</label>
+							<input id="BPrice" type="number" class="productPrice" placeholder="Product B Price" value="150" />
+						</div>
+						<div class="input-container">
+							<label for="BWeight" class="input-label">Weight</label>
+							<input id="BWeight" type="number" class="productWeight" placeholder="Product B Weight" value="1" />
+						</div>
 					</div>
 				</div>
-				<button onclick="comparePrices()">Compare Prices</button>
+				<button onclick="comparePrices()" class="compare-btn">Compare Prices</button>
 			</div>
 			<!-- Result display -->
 			<div id="result"></div>
